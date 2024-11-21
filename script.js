@@ -58,7 +58,7 @@ iced.addEventListener('click', function (event) {
 
 /** Coffee Hot Service */
 function hotService() {
-    if (!hot.classList.contains("active")) {
+    if (!hot.classList.contains('active')) {
         getData(service_hot);
         hot.classList.add('active');
         iced.classList.remove('active');
@@ -67,7 +67,7 @@ function hotService() {
 
 /** Coffee Iced Service */
 function icedService() {
-    if (!iced.classList.contains("active")) {
+    if (!iced.classList.contains('active')) {
         getData(service_iced);
         iced.classList.add('active');
         hot.classList.remove('active');
@@ -81,7 +81,7 @@ async function getData(service) {
         headers: myHeader
     };
     var myHeader = new Headers();
-    myHeader.append("Content-Type", "application/json");
+    myHeader.append('Content-Type', 'application/json');
     var apiRequest = apiUrl + service;
     var data = '';
 
@@ -104,12 +104,14 @@ async function getData(service) {
             data.forEach(item => {
                 const li = document.createElement('li');
                 listItems.push(li);
+                li.classList.add('item');
+                li.tagName = item.id;
                 li.innerHTML = `
-                <img src="${item.image}" alt="${item.title}">
-                <div class="data-info">
-                    <div class="data-title">
+                <img src='${item.image}' alt='${item.title}'>
+                <div class='data-info'>
+                    <div class='data-title'>
                       <span>${item.title}</span>
-                      <span class="small">${item.id}</span>
+                      <span class='small'>${item.id}</span>
                     </div>
                     <p>${item.description}, ${item.description}</p>
                 </div>
@@ -117,6 +119,15 @@ async function getData(service) {
                 li.search = item.title + ' ' + item.id;
                 result.appendChild(li);
             })
+            // Get the button that opens the modal
+            var list = document.getElementsByClassName('item');
+            // When the user clicks on the list item, open the modal
+            var i;
+            for (i = 0; i < list.length; i++) {
+                list[i].onclick = function() {
+                    modal.style.display = 'block';
+                }
+            }
         })
         .catch(error => {
             // Send Console Error
@@ -164,4 +175,20 @@ function filterData(searchTerm) {
             item.classList.add('hide');
         }
     })
+}
+
+
+// Get the modal
+var modal = document.getElementById('myModal');
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName('close')[0];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = 'none';
+}
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = 'none';
+  }
 }
