@@ -9,7 +9,7 @@ Created by German Gambera.
 
 
 ## Summary
-Business: Advanced Course - React Web  
+Subtect: Advanced Course - React Web  
 Author: German Gambera  
 Date: 11-21-2024  
 
@@ -45,8 +45,8 @@ The chosen project is about a list of products from a Coffee Store.
 * style.css
 * script.js
 ### API Services used
-* GET https://api.sampleapis.com/coffee/hot
-* GET https://api.sampleapis.com/coffee/iced
+* GET https://api.sampleapis.com/coffee/hot   --> Retrieve hot coffee list
+* GET https://api.sampleapis.com/coffee/iced  --> Retrieve iced coffee list
 
 ## Project Requirements
 ### Structure
@@ -75,24 +75,24 @@ Main Panel shows a header, filter bar, menu options, and the list of coffees:
 ![](docs/screenshots/list_hot.png)
 
 ### Search block
-It is used to filter the list by name or id products:
+It is used to filter the list by name or id product:
 
 ![](docs/screenshots/search.png)
 
 ### Menu Options
-When some option is selected, a new API call is executed and bring up all new information. When one option is selected, a new API call is executed and bring up all the new information retrieved:
+When one option is selected, a new API call is executed and bring up all the new information stored:
 
 ![](docs/screenshots/menu.png)
 
 
 ### List of Products
-This block shows main information regarding the coffee product such as name, id, description and photo. List can be scrolled up and down, and an item can be selected:
+This block shows the main information regarding the list of coffee products such as name, id, description and photo. The list can be scrolled up and down, and any record can be selected:
 
 ![](docs/screenshots/list_iced.png)
 
 
 ### Modal Panel
-Once you click in a record, a popup panel is shown as modal with the complete information about the coffee product:
+When a record is clicked, a popup panel is shown as modal with the complete information about the selected coffee in a detailed view. The popup panel can be closed clicking on the close icon or on screen around the panel: 
 
 ![](docs/screenshots/modal.png)
 
