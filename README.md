@@ -25,22 +25,26 @@ The chosen project is about a list of products from a Coffee Store.
 
 ## Content
 
-* [Platform](#markdown-header-platform)
-* [Project Requirements](#markdown-header-project-requirements)
+* [Platform](#platform)
+* [Project Requirements](#project-requirements)
 
-* [Key Features](#markdown-header-key-features)
-* [User Manual](#markdown-header-user-manual)
-* [Contributing](#markdown-header-contributing)
-* [Additional Information](#markdown-header-additional-information)
+* [Key Features](#key-features)
+* [User Manual](#user-manual)
+* [Contributing](#contributing)
+* [Additional Information](#additional-information)
 
 ## Platform
 #### Languages
-* Html5
-* Css
+* HTML 5
+* CSS
 * Javascript
 #### Additional Tools
 * API calls to services on [api.sampleapis.com](#api.sampleapis.com)
 * Fonts Awesome 6.5.2
+#### Main Components
+* index.html
+* style.css
+* script.js
 
 ## Project Requirements
 #### Structure
@@ -61,8 +65,13 @@ The chosen project is about a list of products from a Coffee Store.
 * Be thoughtful about what type of styling is used (example: font-sizes are not too small or large, colors are not too dark/light to be easily seen, etc.)
 
 ## Key Features
-
-## User Manual
+This project represents the use of a list of products from a coffee warehouse using calls to two public API services available on the web at https://api.sampleapis.com/coffee/.
+It was developed in HTML5, CSS, and basic javascript functions without using any framework. The focus was on design and style and trying to use best practices. The application is responsive web. Below are the main features
+### Main Panel
+### Search block
+### Menu Options
+### List of Products
+### Modal Panel
 
 ## Contributing
 Copyright © German Gambera.  
@@ -71,4 +80,4 @@ All rights reserved.
 ## Additional Information
 N/A
 
-[Go to Top](#markdown-header-coffee-app)  
+[Go to Top](#coffee-app)  
