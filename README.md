@@ -45,8 +45,8 @@ The chosen project is about a list of products from a Coffee Store.
 * style.css
 * script.js
 ### API Services used
-* GET https://api.sampleapis.com/coffee/hot   --> Retrieve hot coffee list
-* GET https://api.sampleapis.com/coffee/iced  --> Retrieve iced coffee list
+* GET https://api.sampleapis.com/coffee/hot   --> Retrieve a hot coffee list
+* GET https://api.sampleapis.com/coffee/iced  --> Retrieve an iced coffee list
 
 ## Project Requirements
 ### Structure
@@ -67,7 +67,7 @@ The chosen project is about a list of products from a Coffee Store.
 * Be thoughtful about what type of styling is used (example: font-sizes are not too small or large, colors are not too dark/light to be easily seen, etc.)
 
 ## Key Features
-This project represents the use of a list of products from a coffee store using calls to two public API services available on the web at https://api.sampleapis.com/coffee/.
+This project represents the use of a list of products from a coffee store using calls to two public API services available on the web at https://api.sampleapis.com/coffee/.  
 It was developed in HTML5, CSS, and basic javascript functions without using any framework. The focus was on design and style and trying to use best practices. The application is a web responsive. Below are the main features: 
 ### Main Panel
 Main Panel shows a header, filter bar, menu options, and the list of coffees:
@@ -80,7 +80,7 @@ It is used to filter the list by name or id product:
 ![](docs/screenshots/search.png)
 
 ### Menu Options
-When one option is selected, a new API call is executed and bring up all the new information stored:
+When one option is selected, a new API call is executed and bring up all the new information from API:
 
 ![](docs/screenshots/menu.png)
 
@@ -92,13 +92,15 @@ This block shows the main information regarding the list of coffee products such
 
 
 ### Modal Panel
-When a record is clicked, a popup panel is shown as modal with the complete information about the selected coffee in a detailed view. The popup panel can be closed clicking on the close icon or on screen around the panel: 
+When a record is clicked, a popup panel is shown as modal with the complete information about the selected coffee in a detailed view, including ingredients information.  
+The popup panel can be closed clicking on the close icon or on screen around the panel: 
 
 ![](docs/screenshots/modal.png)
 
 
 ## Contributing
-Copyright © German Gambera.  
+From German Gambera to Code The Dream.  
+Copyright © 2024.  
 All rights reserved.
 
 ## Additional Information
