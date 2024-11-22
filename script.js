@@ -101,31 +101,57 @@ async function getData(service) {
             if (data.error) {
                 throw new Error('Api Error. STATUS: ' + data.error + ' ' + data.message);
             }
+            var pos = 0;
             data.forEach(item => {
                 const li = document.createElement('li');
                 listItems.push(li);
                 li.classList.add('item');
-                li.tagName = item.id;
+                li.tagID = pos++;
                 li.innerHTML = `
-                <img src='${item.image}' alt='${item.title}'>
-                <div class='data-info'>
-                    <div class='data-title'>
-                      <span>${item.title}</span>
-                      <span class='small'>${item.id}</span>
-                    </div>
-                    <p>${item.description}, ${item.description}</p>
-                </div>
-            `;
+                    <img src='${item.image}' alt='${item.title}'>
+                    <table class="table-info">
+                        <tr>
+                            <td class="table-td">${item.title}</td>
+                            <td class="table-td-2">${item.id}</td>
+                        </tr>
+                        <tr>
+                            <td class="table-desc">${item.description}</td>
+                        </tr>
+                    </table>
+                `;
                 li.search = item.title + ' ' + item.id;
                 result.appendChild(li);
             })
+
             // Get the button that opens the modal
             var list = document.getElementsByClassName('item');
             // When the user clicks on the list item, open the modal
-            var i;
             for (i = 0; i < list.length; i++) {
-                list[i].onclick = function() {
+                list[i].onclick = function(item) {
+                    const pos = item.currentTarget.tagID;
+                    resultModal.innerHTML = '';
                     modal.style.display = 'block';
+                    const detail = document.createElement('li');
+                    detail.classList.add('modal-item');
+                    /*
+                    for (i = 0; i < data.ingredients.length; i++) {
+                        const ing = document.createElement('li');
+                        
+                    }
+                    */
+                    detail.innerHTML = `
+                        <img src='${data[pos].image}' alt='${data[pos].title}'>
+                        <table class="modal-info">
+                            <tr>
+                                <td class="modal-td">${data[pos].title}</td>
+                                <td class="modal-td-2">${data[pos].id}</td>
+                            </tr>
+                            <tr>
+                                <td class="modal-desc">${data[pos].description}</td>
+                            </tr>
+                        </table>
+                    `;
+                    resultModal.appendChild(detail);    
                 }
             }
         })
@@ -136,7 +162,6 @@ async function getData(service) {
             result.innerHTML = '';
             // Fill html with Error
             const li = document.createElement('li');
-            listItems.push(li);
             li.innerHTML = `<span>${error}</spam>`;
             result.appendChild(li);
         });
@@ -179,13 +204,15 @@ function filterData(searchTerm) {
 
 
 // Get the modal
-var modal = document.getElementById('myModal');
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName('close')[0];
+const modal = document.getElementById('myModal');
+const resultModal = document.getElementById('resultModal');
+const span = document.getElementsByClassName('close')[0];
+
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = 'none';
 }
+
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
