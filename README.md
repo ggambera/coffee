@@ -27,37 +27,39 @@ The chosen project is about a list of products from a Coffee Store.
 
 * [Platform](#platform)
 * [Project Requirements](#project-requirements)
-
 * [Key Features](#key-features)
 * [User Manual](#user-manual)
 * [Contributing](#contributing)
 * [Additional Information](#additional-information)
 
 ## Platform
-#### Languages
+### Languages
 * HTML 5
 * CSS
 * Javascript
-#### Additional Tools
+### Additional Tools
 * API calls to services on [api.sampleapis.com](#api.sampleapis.com)
 * Fonts Awesome 6.5.2
-#### Main Components
+### Main Components
 * index.html
 * style.css
 * script.js
+### API Services used
+* GET https://api.sampleapis.com/coffee/hot
+* GET https://api.sampleapis.com/coffee/iced
 
 ## Project Requirements
-#### Structure
+### Structure
 * A public GitHub repository containing your project
 * An HTML document for the page
 * A CSS document to style the HTML page
 * A JavaScript file that retrieves data from one of several public API sources to * display the data on your HTML page
 * A README file that includes the instructions for running the webpage
-#### Content
+### Content
 * Display the data for at least 2 of the end-points in the API
 * Include navigation from each end-point’s page to the other end-points that are displayed
 * Issue new GET requests for the linked data to display in the linked pages.
-#### Functionality
+### Functionality
 * Be sure that we can get the code to run without issues by following the instructions in the README file
 * Be sure navigation between the different end-points behaves properly and is not slowed down by requesting more data than needs to be displayed
 * Be sure your code is readable and well structured
@@ -65,13 +67,35 @@ The chosen project is about a list of products from a Coffee Store.
 * Be thoughtful about what type of styling is used (example: font-sizes are not too small or large, colors are not too dark/light to be easily seen, etc.)
 
 ## Key Features
-This project represents the use of a list of products from a coffee warehouse using calls to two public API services available on the web at https://api.sampleapis.com/coffee/.
-It was developed in HTML5, CSS, and basic javascript functions without using any framework. The focus was on design and style and trying to use best practices. The application is responsive web. Below are the main features
+This project represents the use of a list of products from a coffee store using calls to two public API services available on the web at https://api.sampleapis.com/coffee/.
+It was developed in HTML5, CSS, and basic javascript functions without using any framework. The focus was on design and style and trying to use best practices. The application is a web responsive. Below are the main features: 
 ### Main Panel
+Main Panel shows a header, filter bar, menu options, and the list of coffees:
+
+![](docs/screenshots/list_hot.png)
+
 ### Search block
+It is used to filter the list by name or id products:
+
+![](docs/screenshots/search.png)
+
 ### Menu Options
+When some option is selected, a new API call is executed and bring up all new information. When one option is selected, a new API call is executed and bring up all the new information retrieved:
+
+![](docs/screenshots/menu.png)
+
+
 ### List of Products
+This block shows main information regarding the coffee product such as name, id, description and photo. List can be scrolled up and down, and an item can be selected:
+
+![](docs/screenshots/list_iced.png)
+
+
 ### Modal Panel
+Once you click in a record, a popup panel is shown as modal with the complete information about the coffee product:
+
+![](docs/screenshots/modal.png)
+
 
 ## Contributing
 Copyright © German Gambera.  
