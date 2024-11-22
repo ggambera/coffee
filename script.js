@@ -97,7 +97,7 @@ async function getData(service) {
         .then(data => {
             // Clear result
             result.innerHTML = '';
-            // Fill html with info from data response
+            // Complete html with info from data response
             if (data.error) {
                 throw new Error('Api Error. STATUS: ' + data.error + ' ' + data.message);
             }
@@ -125,31 +125,31 @@ async function getData(service) {
 
             // Get the button that opens the modal
             var list = document.getElementsByClassName('item');
-            // When the user clicks on the list item, open the modal
+
+            // Complete html with info to Modal Panel
             for (i = 0; i < list.length; i++) {
                 list[i].onclick = function(item) {
+                    // When the user clicks on the list item, open the modal
                     const pos = item.currentTarget.tagID;
                     resultModal.innerHTML = '';
                     modal.style.display = 'block';
-                    const detail = document.createElement('li');
-                    detail.classList.add('modal-item');
-                    /*
-                    for (i = 0; i < data.ingredients.length; i++) {
-                        const ing = document.createElement('li');
-                        
+                    const detail = document.createElement('div');
+                    //detail.classList.add('modal-item');
+
+                    var li = '';
+                    var record = data[pos];
+                    for (j = 0; j < record.ingredients.length; j++) {
+                        li = li + "<li>" + record.ingredients[j] + "</li>";                        
                     }
-                    */
                     detail.innerHTML = `
                         <img src='${data[pos].image}' alt='${data[pos].title}'>
-                        <table class="modal-info">
-                            <tr>
-                                <td class="modal-td">${data[pos].title}</td>
-                                <td class="modal-td-2">${data[pos].id}</td>
-                            </tr>
-                            <tr>
-                                <td class="modal-desc">${data[pos].description}</td>
-                            </tr>
+                        <spam class="modal-td">${data[pos].title}</spam>
+                        <spam class="modal-td-2">(${data[pos].id})</spam>
+                        <table class="modal-table">
+                            <tr><td class="modal-desc">${data[pos].description}</td></tr>
                         </table>
+                        <spam class="modal-td-3">Ingredients</spam>
+                        <ul class="square">${li}</ul>
                     `;
                     resultModal.appendChild(detail);    
                 }
